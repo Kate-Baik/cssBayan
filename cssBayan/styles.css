@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: aquamarine;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+/*style Joke block*/
+.joke {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.joke-item {
+    border: 1px solid #black;
+}
+
+.joke-question {
+    display: block;
+    padding: 10px 15px;
+    color:rgb(92, 77, 58);
+    cursor: pointer; 
+
+    /*bg change*/
+    transition: background .2s
+    ease-out;
+}
+
+.joke-question:hover {
+    background-color: aquamarine;
+}
+
+.joke-input {
+    /*element hyde*/
+    width: 0;
+    height: 0;
+    padding: 10px 15px;
+    appearance: none;
+    position: absolute;
+}
+
+.joke-input:checked + .joke-text {
+    display: block;
+}
+
+.joke-text {
+    display: none;
+    color:bisque;
+    font-size: 14px; 
+
+}
