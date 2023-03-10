@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    font-size: 20px;
     line-height: 1.5;
-    background-color: aquamarine;
+    background-color: rgb(218, 211, 199);
 }
 
 *,
@@ -22,22 +22,36 @@ p {
 }
 
 .joke-item {
-    border: 1px solid #black;
+    border-top: 3px solid #4437396f;
 }
 
 .joke-question {
     display: block;
     padding: 10px 15px;
+    position: relative;
     color:rgb(92, 77, 58);
-    cursor: pointer; 
+    cursor: pointer; /*hand on element*/
 
     /*bg change*/
     transition: background .2s
     ease-out;
 }
 
+.joke-question:after {
+    content: "";
+    display: block;
+    border-style: solid;
+border-width: 3.5px 7px 3.5px 0;
+border-color: transparent #394857 transparent transparent;
+position: absolute;
+top: 50%;
+right: 15px;
+
+transform: translateY(-50%);
+}
+
 .joke-question:hover {
-    background-color: aquamarine;
+    background-color: rgb(240, 186, 100);
 }
 
 .joke-input {
@@ -49,13 +63,25 @@ p {
     position: absolute;
 }
 
-.joke-input:checked + .joke-text {
-    display: block;
+.joke-input:checked ~ .joke-question {
+    background-color: aquamarine;
 }
+
+.joke-input:checked ~ .joke-question:after {
+
+    border-style: solid;
+    border-width: 7px 3.5px 0 3.5px;
+    border-color: #394857 transparent transparent transparent;
+}
+
+.joke-input:checked ~ .joke-text {
+display: block;
+}   
 
 .joke-text {
     display: none;
-    color:bisque;
+    color:rgb(81, 68, 54);
     font-size: 14px; 
+    padding: 10px 15px;
 
 }
