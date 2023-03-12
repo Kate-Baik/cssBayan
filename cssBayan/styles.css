@@ -1,0 +1,61 @@
+.joke, .joke * {
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: auto;
+  }
+  .joke { 
+    max-width: 80%; }
+  
+  .joke input { 
+    display: none; }
+  
+  .joke label {
+    position: relative; 
+    display: block;
+    width: 100%;
+    border-top: 3px solid #4437396f;
+    padding: 20px 30px 20px 30px;
+    font-weight: 700;
+    color:rgb(92, 77, 58);
+    background: rgb(218, 211, 199);
+    cursor: pointer;
+  }
+  
+  /* hidden content of joke */
+  .joke .content {
+    background: rgb(218, 211, 199);
+    overflow: hidden;
+    transition: 0.5s;
+    max-height: 0;
+  }
+  .joke .content p { 
+    padding: 3vw 6vw;
+    text-align: center;
+  }
+
+  .joke input:checked ~ .content { 
+    max-height: 100%;
+    transition: all 0.4s;
+ }
+  
+  /* icon */
+  .joke :hover::after {
+    display: block;  
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: 2vw;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+  }
+
+  /* icon movement */
+  .joke input:checked ~ label::after { 
+    content: "+";
+    transform: rotate(45deg);
+    display: block;  
+    position: absolute;
+    top: 50%;
+    right: 2vw;
+    transition: all 0.3s;
+ }
